@@ -1,3 +1,4 @@
+import { bool } from '@ember/object/computed';
 import { run } from '@ember/runloop';
 import Helper from '@ember/component/helper';
 import { get, observer, computed } from '@ember/object';
@@ -6,7 +7,7 @@ import { inject as service } from '@ember/service';
 export default Helper.extend({
   moment: service(),
   disableInterval: false,
-  globalAllowEmpty: computed.bool('moment.__config__.allowEmpty'),
+  globalAllowEmpty: bool('moment.__config__.allowEmpty'),
   supportsGlobalAllowEmpty: true,
   localeOrTimeZoneChanged: observer('moment.locale', 'moment.timeZone', function() {
     this.recompute();

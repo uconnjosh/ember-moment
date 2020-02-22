@@ -2,7 +2,13 @@ import Service from '@ember/service';
 import Evented from '@ember/object/evented';
 import { getOwner } from '@ember/application';
 import moment from 'moment';
-import { computed, get, set, getProperties, setProperties } from '@ember/object';
+import {
+  computed,
+  get,
+  set,
+  getProperties,
+  setProperties
+} from '@ember/object';
 
 export default Service.extend(Evented, {
   _timeZone: null,
